@@ -1,4 +1,8 @@
-import { checkInputValidity, toggleButtonState } from "../scripts/validate.js";
+import {
+  checkInputValidity,
+  toggleButtonState,
+  hideInputError,
+} from "../scripts/validate.js";
 
 class FormValidator {
   constructor(settings, formElement) {
@@ -53,6 +57,16 @@ class FormValidator {
       evt.preventDefault();
     });
     this._setEventListeners();
+  }
+
+  resetValidation() {
+    this._inputList.forEach((inputElement) => {
+      hideInputError(this._formElement, inputElement, this._settings);
+    });
+    const buttonElement = this._formElement.querySelector(
+      this._settings.submitButtonSelector
+    );
+    toggleButtonState(this._inputList, buttonElement, this._settings);
   }
 }
 
