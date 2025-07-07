@@ -34,6 +34,9 @@ class Todo {
     todoNameEl.textContent = this._data.name;
 
     const dueDate = new Date(this._data.date);
+    if (isNaN(dueDate.getTime())) {
+      throw new Error("Invalid date provided for todo item.");
+    }
     this._todoDate.textContent = `Due: ${dueDate.toLocaleString("en-US", {
       year: "numeric",
       month: "short",

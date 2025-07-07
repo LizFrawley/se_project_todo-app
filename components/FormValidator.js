@@ -2,6 +2,8 @@ import {
   checkInputValidity,
   toggleButtonState,
   hideInputError,
+  showInputError,
+  hasInvalidInput,
 } from "../scripts/validate.js";
 
 class FormValidator {
@@ -49,7 +51,6 @@ class FormValidator {
         this._toggleButtonState(this._inputList, buttonElement, this._settings);
       });
     });
-    console.log("Success");
   }
 
   enableValidation() {
@@ -67,6 +68,7 @@ class FormValidator {
       this._settings.submitButtonSelector
     );
     toggleButtonState(this._inputList, buttonElement, this._settings);
+    this._formElement.reset();
   }
 }
 

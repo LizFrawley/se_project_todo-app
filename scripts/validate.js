@@ -73,4 +73,10 @@ const enableValidation = (settings) => {
 
 enableValidation(validationConfig);
 
-export { checkInputValidity, toggleButtonState, hideInputError };
+export {
+  checkInputValidity,
+  toggleButtonState,
+  hideInputError,
+  showInputError,
+  hasInvalidInput,
+};

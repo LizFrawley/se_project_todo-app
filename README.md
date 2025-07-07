@@ -21,4 +21,4 @@ I used JavaScript a lot for this project. The HTML and CSS were already written 
 
 This project is deployed on GitHub Pages:
 
-- https://github.com/LizFrawley/se_project_todo-app.git
+- https://LizFrawley.github.io/se_project_todo-app

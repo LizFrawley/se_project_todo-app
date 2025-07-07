@@ -8,8 +8,6 @@ const addTodoPopup = document.querySelector("#add-todo-popup");
 const addTodoForm = addTodoPopup.querySelector(".popup__form");
 const addTodoCloseBtn = addTodoPopup.querySelector(".popup__close");
 
-const formValidator = new FormValidator(validationConfig, addTodoForm);
-
 const todosList = document.querySelector(".todos__list");
 
 const openModal = (modal) => {
@@ -20,7 +18,6 @@ const closeModal = (modal) => {
   modal.classList.remove("popup_visible");
 };
 
-// The logic in this function should all be handled in the Todo class.
 const generateTodo = (data) => {
   const todo = new Todo(data, "#todo-template");
   const todoElement = todo.getView();
@@ -48,7 +45,7 @@ addTodoForm.addEventListener("submit", (evt) => {
   const todo = generateTodo(values);
   todosList.append(todo);
   closeModal(addTodoPopup);
-  addTodoForm.reset();
+  FormValidator.resetValidation();
 });
 
 initialTodos.forEach((item) => {
