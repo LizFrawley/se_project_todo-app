@@ -68,7 +68,6 @@ class FormValidator {
       this._settings.submitButtonSelector
     );
     toggleButtonState(this._inputList, buttonElement, this._settings);
-    this._formElement.reset();
   }
 }
 
